@@ -1,0 +1,10 @@
+@import "/src/styles/variables.scss";
+
+.products-container {
+	display: flex;
+  flex-wrap: wrap;
+  gap: $gap-normal;
+  padding: $gap-normal 0;
+  justify-content: center;
+  height: 100%;
+}

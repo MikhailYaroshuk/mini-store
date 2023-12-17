@@ -1,0 +1,20 @@
+@import "/src/styles/variables.scss";
+
+.search-container {
+  .search-input {
+    padding: 8px 15px;
+    border: 1px solid $divider-color;
+    border-radius: 4px;
+    font-size: $font-size-primary;
+    outline: none;
+    margin-left: 15px;
+
+    &:focus {
+      border-color: $blue;
+    }
+
+    @media (min-width: 768px) {
+      margin-left: 0;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import "/src/styles/variables.scss";
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .breadcrumb {
+		font-size: $font-size-secondary;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: $blue;
+    text-decoration: none;
+    position: relative;
+		text-transform: capitalize;
+
+    &:not(:last-child)::after {
+      content: '>';
+      color: $secondary-text;
+      margin: 0 5px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

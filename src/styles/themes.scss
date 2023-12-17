@@ -1,0 +1,63 @@
+@import 'variables.scss';
+
+$light-theme: (
+  background: $white,
+  text: $primary-text,
+  primary: $blue,
+  search-input-text: $primary-text,
+  search-input-border: $divider-color,
+	modal-background: $white,
+);
+
+$dark-theme: (
+  background: $primary-text,
+  text: $white,
+  primary: $blue,
+	modal-background: $dark-gray,
+	search-input-bg: $dark-gray,
+  search-input-text: $light-primary,
+  search-input-border: darken($dark-gray, 15%),
+);
+
+@mixin apply-theme($theme) {
+  background-color: map-get($theme, 'background');
+  color: map-get($theme, text);
+
+  .primary {
+    color: map-get($theme, primary);
+  }
+
+	.modal-content, .product-card, .filter-button, .filter-dropdown {
+    background-color: map-get($theme, 'modal-background');
+  }
+
+	.search-input {
+    background-color: map-get($theme, 'modal-background');
+    color: map-get($theme, 'search-input-text');
+    border-color: map-get($theme, 'search-input-border');
+
+    &:focus {
+      border-color: $blue;
+    }
+  }
+
+	.filter-button {
+    background-color: map-get($theme, 'modal-background');
+  }
+
+  .filter-dropdown {
+    background-color: map-get($theme, 'modal-background');
+
+    .filter-item:hover {
+      background-color: map-get($theme, 'search-input-border');
+    }
+  }
+
+	.filter-button, .product-price, .product-rate {
+		color: map-get($theme, text);
+	}
+
+	.menu-list li a {
+		color: map-get($theme, text);
+	}
+}

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import "/src/styles/variables.scss";
+@import '/src/styles/themes.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.app, #modal-root {
+  &.light {
+    @include apply-theme($light-theme);
+  }
+
+  &.dark {
+    @include apply-theme($dark-theme);
+  }
+
+  .container {
+    margin: 0 auto;
+    padding: 0 10px;
+
+    @media (min-width: 768px) {
+      max-width: 1440px;
+      padding: 0 20px;
+    }
+  }
+
+  .filter-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    border-bottom: 1px solid $divider-color;
+    padding-bottom: 10px;
+
+    .right-side {
+      display: flex;
+      margin-top: 5px;
+      width: 100%;
+      justify-content: space-between;
+
+      @media (min-width: 768px) {
+        width: auto;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 0;
+      }
+    }
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
